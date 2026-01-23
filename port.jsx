@@ -9,12 +9,6 @@ const projects = [
     category: "UI / UX Design",
     description:
       "A complete UI/UX design for a makeup e-commerce mobile application, including onboarding, product listing, cart, checkout, and payment flow.",
-    images: [
-      "/images/ui-1.jpg",
-      "/images/ui-2.jpg",
-      "/images/ui-3.jpg",
-      "/images/ui-4.jpg",
-    ],
     tools: "Figma, Adobe Photoshop",
   },
 ];
@@ -56,16 +50,18 @@ export default function Page() {
       <section className="max-w-6xl mx-auto px-6 py-24">
         <h2 className="text-4xl font-bold mb-10">About Me</h2>
         <p className="text-gray-300 max-w-3xl text-lg leading-relaxed">
-          I’m a creative graphic designer passionate about transforming ideas into visually striking designs.
+          I’m a creative graphic designer passionate about transforming ideas into
+          visually striking designs. I specialize in UI/UX, branding, and digital
+          visuals with a strong focus on aesthetics and usability.
         </p>
       </section>
 
       {/* SKILLS */}
       <section className="bg-black/40 py-24">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10">
-          <Skill icon={<Palette size={40} />} title="Branding" />
+          <Skill icon={<Palette size={40} />} title="Branding & Visual Design" />
           <Skill icon={<PenTool size={40} />} title="Design Tools" />
-          <Skill icon={<Layers size={40} />} title="Digital Design" />
+          <Skill icon={<Layers size={40} />} title="UI / UX Design" />
         </div>
       </section>
 
@@ -78,20 +74,30 @@ export default function Page() {
             key={i}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
             className="rounded-2xl bg-white/5 p-10 mt-12 border border-white/10"
           >
-            <h3 className="text-3xl font-semibold">{project.title}</h3>
-            <p className="text-gray-400 mt-2">{project.description}</p>
+            <span className="text-sm uppercase tracking-wide text-fuchsia-400">
+              {project.category}
+            </span>
 
-            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 mt-8">
-              {project.images.map((img, idx) => (
-                <img
-                  key={idx}
-                  src={img}
-                  alt={project.title}
-                  className="rounded-xl object-cover"
-                />
-              ))}
+            <h3 className="text-3xl font-semibold mt-3">
+              {project.title}
+            </h3>
+
+            <p className="text-gray-400 mt-4 max-w-3xl">
+              {project.description}
+            </p>
+
+            <p className="text-sm text-gray-500 mt-6">
+              Tools Used: {project.tools}
+            </p>
+
+            {/* Placeholder instead of images */}
+            <div className="mt-10 h-48 rounded-xl bg-gradient-to-br from-fuchsia-600/20 to-pink-600/10 flex items-center justify-center">
+              <span className="text-gray-300">
+                UI Screens & Case Study Coming Soon
+              </span>
             </div>
           </motion.div>
         ))}
@@ -100,7 +106,13 @@ export default function Page() {
       {/* CONTACT */}
       <section className="py-28 text-center">
         <Mail size={44} className="mx-auto mb-6 text-fuchsia-400" />
-        <h2 className="text-4xl font-bold">Let’s Create Something</h2>
+        <h2 className="text-4xl font-bold mb-4">Let’s Create Something</h2>
+        <p className="text-gray-300 max-w-xl mx-auto mb-8">
+          I’m open to full-time roles, freelance projects, and creative collaborations.
+        </p>
+        <button className="rounded-2xl px-10 py-4 bg-fuchsia-600 hover:bg-fuchsia-700 transition shadow-xl">
+          Contact Me
+        </button>
       </section>
 
     </div>
