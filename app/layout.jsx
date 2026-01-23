@@ -1,3 +1,5 @@
+import './globals.css'; // Add this import
+
 export const metadata = {
   title: "Graphic Designer Portfolio",
   description: "Creative UI/UX & Graphic Design Portfolio",
