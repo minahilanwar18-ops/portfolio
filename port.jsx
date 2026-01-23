@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Palette, PenTool, Layers, Mail, Sparkles } from "lucide-react";
 
@@ -17,7 +19,7 @@ const projects = [
   },
 ];
 
-export default function App() {
+export default function Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-fuchsia-900 text-white">
 
@@ -86,6 +88,7 @@ export default function App() {
                 <img
                   key={idx}
                   src={img}
+                  alt={project.title}
                   className="rounded-xl object-cover"
                 />
               ))}
@@ -95,3 +98,20 @@ export default function App() {
       </section>
 
       {/* CONTACT */}
+      <section className="py-28 text-center">
+        <Mail size={44} className="mx-auto mb-6 text-fuchsia-400" />
+        <h2 className="text-4xl font-bold">Let’s Create Something</h2>
+      </section>
+
+    </div>
+  );
+}
+
+function Skill({ icon, title }) {
+  return (
+    <div className="rounded-2xl bg-white/5 p-8 border border-white/10 hover:scale-105 transition">
+      <div className="text-fuchsia-400 mb-4">{icon}</div>
+      <h3 className="text-xl font-semibold">{title}</h3>
+    </div>
+  );
+}
