@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Palette, PenTool, Layers, Mail, Sparkles, ArrowRight, Download, Github, Linkedin, X, ZoomIn } from "lucide-react";
 
-// Your 9 images - Replace with your actual image filenames
+// Your 9 images
 const projects = [
   {
     id: 1,
@@ -11,31 +11,31 @@ const projects = [
     description: "A complete UI/UX design for a makeup e-commerce mobile application including onboarding, cart, checkout and payment flow.",
     tags: ["UI/UX", "Mobile", "E-Commerce"],
     color: "from-pink-500 to-fuchsia-600",
-    image: "/images/mockup.jpg.jpeg" // Replace with your image
+    image: "/images/mockup.jpg.jpeg"
   },
   {
-  id: 2,
-  title: "Logo Design Collection",
-  description: "Modern and minimalist logo designs that capture brand essence and identity.",
-  tags: ["Branding", "Logo Design"],
-  color: "from-purple-500 to-pink-600",
-  image: "/images/1vbn.jpg.jpeg"
+    id: 2,
+    title: "Logo Design Collection",
+    description: "Modern and minimalist logo designs that capture brand essence and identity.",
+    tags: ["Branding", "Logo Design"],
+    color: "from-purple-500 to-pink-600",
+    image: "/images/1vbn.jpg.jpeg"
   },
   {
-  id: 3,
-  title: "Print Marketing Materials",
-  description: "Creative flyers and brochures designed to capture attention and drive engagement.",
-  tags: ["Print", "Flyer", "Marketing"],
-  color: "from-violet-500 to-purple-600",
-  image: "/images/7c3b0d104776837.5f6a725d739ef.png"
+    id: 3,
+    title: "Print Marketing Materials",
+    description: "Creative flyers and brochures designed to capture attention and drive engagement.",
+    tags: ["Print", "Flyer", "Marketing"],
+    color: "from-violet-500 to-purple-600",
+    image: "/images/7c3b0d104776837.5f6a725d739ef.png"
   },
   {
-      id: 4,
-      title: "Social Media Post",
-      description: "Eye-catching social media designs for product launch across Instagram and Facebook.",
-      tags: ["Social Media", "Marketing"],
-      color: "from-orange-500 to-pink-600",
-      image: "/images/coming soon.jpg.jpeg" // Replace with your image
+    id: 4,
+    title: "Social Media Post",
+    description: "Eye-catching social media designs for product launch across Instagram and Facebook.",
+    tags: ["Social Media", "Marketing"],
+    color: "from-orange-500 to-pink-600",
+    image: "/images/coming%20soon.jpg.jpeg" // Fixed: URL encoded the space
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ const projects = [
     tags: ["Web Design", "Corporate", "Marketing"],
     color: "from-red-500 to-gray-600",
     image: "/images/website_design.png"
-   },
+  },
   {
     id: 6,
     title: "Social Media Posts - Admissions",
@@ -322,7 +322,8 @@ export default function Page() {
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     onError={(e) => {
-                      e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23111' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='%23666' font-size='16' dy='.3em'%3EAdd Your Image%3C/text%3E%3C/svg%3E";
+                      console.log("Image failed to load:", project.image);
+                      e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23111' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='%23666' font-size='16' dy='.3em'%3EImage Not Found%3C/text%3E%3C/svg%3E";
                     }}
                   />
                   
@@ -389,7 +390,7 @@ export default function Page() {
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.9, opacity: 0 }}
                 onClick={(e) => e.stopPropagation()}
-                className="relative max-w-6xl w-full max-h-[90vh] bg-gradient-to-br from-gray-900 to-black rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
+                className="relative max-w-6xl w-full max-h-[90vh] bg-gradient-to-br from-gray-900 to-black rounded-3xl overflow-y-auto border border-white/10 shadow-2xl"
               >
                 {/* Large Image */}
                 <div className="relative">
