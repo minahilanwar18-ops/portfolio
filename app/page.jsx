@@ -129,13 +129,6 @@ export default function Page() {
             >
               <Linkedin size={24} />
             </motion.a>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-2 bg-gradient-to-r from-fuchsia-600 to-purple-600 rounded-full font-semibold"
-            >
-              Resume
-            </motion.button>
           </div>
         </motion.nav>
 
@@ -185,23 +178,15 @@ export default function Page() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="mt-12 flex gap-6"
+            className="mt-12"
           >
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(232, 121, 249, 0.5)" }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-gradient-to-r from-fuchsia-600 to-purple-600 rounded-full font-bold text-lg flex items-center gap-2 shadow-lg shadow-fuchsia-500/50"
             >
-              View My Work <ArrowRight size={20} />
+              Get in touch k <ArrowRight size={20} />
             </motion.button>
-            <motion.a
-              href="https://www.upwork.com/freelancers/~01a347bd1f4aee905a?viewMode=1"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 border-2 border-fuchsia-500/30 rounded-full font-bold text-lg hover:bg-fuchsia-500/10 transition-colors inline-flex items-center"
-            >
-              Get in Touch
-            </motion.a>
           </motion.div>
 
           <motion.div
