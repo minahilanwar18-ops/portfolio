@@ -204,7 +204,7 @@ export default function Page() {
               View My Work <ArrowRight size={20} />
             </motion.button>
             <motion.a
-              href="mailto:minahilanwar18@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=minahilanwar18@gmail.com"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 border-2 border-fuchsia-500/30 rounded-full font-bold text-lg hover:bg-fuchsia-500/10 transition-colors inline-flex items-center"
@@ -464,7 +464,7 @@ export default function Page() {
               </p>
               
               <motion.a
-                href="mailto:minahilanwar18@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=minahilanwar18@gmail.com"
                 whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(232, 121, 249, 0.6)" }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-block px-10 py-5 bg-gradient-to-r from-fuchsia-600 to-purple-600 rounded-full font-bold text-xl shadow-lg shadow-fuchsia-500/50"
