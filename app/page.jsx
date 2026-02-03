@@ -185,7 +185,7 @@ export default function Page() {
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-gradient-to-r from-fuchsia-600 to-purple-600 rounded-full font-bold text-lg flex items-center gap-2 shadow-lg shadow-fuchsia-500/50"
             >
-              Get in touch k <ArrowRight size={20} />
+              Get in touch <ArrowRight size={20} />
             </motion.button>
           </motion.div>
 
@@ -232,7 +232,7 @@ export default function Page() {
               </div>
             </div>
            <div className="relative">
-              <div className="relative w-full h-150 rounded-3xl overflow-hidden border border-white/10">
+              <div className="relative w-full h-120 rounded-3xl overflow-hidden border border-white/10">
                 {/* Background Image */}
                 <img
                   src="/images/about-me.jpg"
