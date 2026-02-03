@@ -258,7 +258,7 @@ export default function Page() {
                   }}
                 />
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-600/20 to-purple-600/20" />
+               <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-600/10 to-purple-600/10" />
               </div>
             </div>
           </motion.div>
