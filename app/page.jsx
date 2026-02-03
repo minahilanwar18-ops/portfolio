@@ -232,7 +232,7 @@ export default function Page() {
               </div>
             </div>
            <div className="relative">
-              <div className="relative w-full h-96 rounded-3xl overflow-hidden border border-white/10">
+              <div className="relative w-full h-150 rounded-3xl overflow-hidden border border-white/10">
                 {/* Background Image */}
                 <img
                   src="/images/about-me.jpg"
