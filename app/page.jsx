@@ -11,7 +11,7 @@ const projects = [
     description: "A complete UI/UX design for a makeup e-commerce mobile application including onboarding, cart, checkout and payment flow.",
     tags: ["UI/UX", "Mobile", "E-Commerce"],
     color: "from-pink-500 to-fuchsia-600",
-    image: "/images/mockup.jpg.jpeg"
+    image: "/images/mockup.jpg"
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const projects = [
     description: "Modern and minimalist logo designs that capture brand essence and identity.",
     tags: ["Branding", "Logo Design"],
     color: "from-purple-500 to-pink-600",
-    image: "/images/1vbn.jpg.jpeg"
+    image: "/images/1vbn.jpg"
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const projects = [
     description: "Eye-catching social media designs for product launch across Instagram and Facebook.",
     tags: ["Social Media", "Marketing"],
     color: "from-orange-500 to-pink-600",
-    image: "/images/coming_soon.jpg.jpeg" // REMEMBER: Rename the file to "coming-soon.jpg.jpeg"
+    image: "/images/coming_soon.jpg" // REMEMBER: Rename the file to "coming-soon.jpg.jpeg"
   },
   {
     id: 5,
@@ -43,7 +43,7 @@ const projects = [
     description: "Clean and modern website design for a marketing agency with strong brand identity and service showcase.",
     tags: ["Web Design", "Corporate", "Marketing"],
     color: "from-red-500 to-gray-600",
-    image: "public/images/website_design.png"
+    image: "images/website_design.png"
   },
   {
     id: 6,
