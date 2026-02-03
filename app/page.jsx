@@ -8,7 +8,6 @@ const projects = [
   {
     id: 1,
     title: "UI/UX Design",
-    description: "A complete UI/UX design for a makeup e-commerce mobile application including onboarding, cart, checkout and payment flow.",
     tags: ["UI/UX", "Mobile", "E-Commerce"],
     color: "from-pink-500 to-fuchsia-600",
     image: "/images/mockup2.jpg"
@@ -16,7 +15,6 @@ const projects = [
   {
     id: 2,
     title: "Logo Design Collection",
-    description: "Modern and minimalist logo designs that capture brand essence and identity.",
     tags: ["Branding", "Logo Design"],
     color: "from-purple-500 to-pink-600",
     image: "/images/1vbn.jpg"
@@ -24,7 +22,6 @@ const projects = [
   {
     id: 3,
     title: "Print Marketing Materials",
-    description: "Creative flyers and brochures designed to capture attention and drive engagement.",
     tags: ["Print", "Flyer", "Marketing"],
     color: "from-violet-500 to-purple-600",
     image: "/images/7c3b0d104776837.5f6a725d739ef.png"
@@ -32,7 +29,6 @@ const projects = [
   {
     id: 4,
     title: "Social Media Post",
-    description: "Eye-catching social media designs for product launch across Instagram and Facebook.",
     tags: ["Social Media", "Marketing"],
     color: "from-orange-500 to-pink-600",
     image: "/images/coming_soon.jpg"
@@ -40,7 +36,6 @@ const projects = [
   {
     id: 5,
     title: "Digital Marketing Website",
-    description: "Clean and modern website design for a marketing agency with strong brand identity and service showcase.",
     tags: ["Web Design", "Corporate", "Marketing"],
     color: "from-red-500 to-gray-600",
     image: "/images/website_design.png"
@@ -48,7 +43,6 @@ const projects = [
   {
     id: 6,
     title: "Social Media Posts - Admissions",
-    description: "Engaging Facebook post design for educational admissions campaign with call-to-action.",
     tags: ["Social Media", "Facebook", "Education"],
     color: "from-blue-500 to-teal-600",
     image: "/images/post1.jpeg"
@@ -56,7 +50,6 @@ const projects = [
   {
     id: 7,
     title: "Countdown Post Design",
-    description: "Eye-catching 7 days countdown post with tech icons for course enrollment campaign.",
     tags: ["Social Media", "Marketing", "Campaign"],
     color: "from-yellow-500 to-orange-600",
     image: "/images/post2.jpeg"
@@ -64,7 +57,6 @@ const projects = [
   {
     id: 8,
     title: "Job Hiring Post",
-    description: "Bold recruitment post for graphic designer position with vibrant illustrations and clear messaging.",
     tags: ["Social Media", "Hiring", "LinkedIn"],
     color: "from-yellow-400 to-pink-500",
     image: "/images/post3.jpeg"
@@ -72,7 +64,6 @@ const projects = [
   {
     id: 9,
     title: "Service Promotion Post",
-    description: "Professional service advertisement for mobile and computer repair with strong visual hierarchy.",
     tags: ["Social Media", "Promotion", "Service"],
     color: "from-yellow-500 to-gray-600",
     image: "/images/post4.jpeg"
@@ -204,7 +195,7 @@ export default function Page() {
               View My Work <ArrowRight size={20} />
             </motion.button>
             <motion.a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=minahilanwar18@gmail.com"
+              href="https://www.upwork.com/freelancers/~01a347bd1f4aee905a?viewMode=1"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 border-2 border-fuchsia-500/30 rounded-full font-bold text-lg hover:bg-fuchsia-500/10 transition-colors inline-flex items-center"
@@ -255,8 +246,20 @@ export default function Page() {
                 </div>
               </div>
             </div>
-            <div className="relative">
-              <div className="w-full h-96 bg-gradient-to-br from-fuchsia-600/20 to-purple-600/20 rounded-3xl border border-white/10 backdrop-blur-sm" />
+           <div className="relative">
+              <div className="relative w-full h-96 rounded-3xl overflow-hidden border border-white/10">
+                {/* Background Image */}
+                <img
+                  src="/images/about-me.jpg"
+                  alt="About Me"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect fill='%23111' width='400' height='400'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='%23666' font-size='16' dy='.3em'%3EYour Image Here%3C/text%3E%3C/svg%3E";
+                  }}
+                />
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-600/20 to-purple-600/20 backdrop-blur-sm" />
+              </div>
             </div>
           </motion.div>
         </section>
@@ -427,15 +430,6 @@ export default function Page() {
                   <p className="text-gray-300 text-xl leading-relaxed mb-8">
                     {selectedProject.description}
                   </p>
-                  
-                  <div className="flex gap-4">
-                    <button className="px-8 py-4 bg-gradient-to-r from-fuchsia-600 to-purple-600 rounded-full font-bold hover:shadow-lg hover:shadow-fuchsia-500/50 transition-all">
-                      View Full Project
-                    </button>
-                    <button className="px-8 py-4 border-2 border-white/10 rounded-full font-bold hover:bg-white/5 transition-all">
-                      More Details
-                    </button>
-                  </div>
                 </div>
               </motion.div>
             </motion.div>
@@ -464,7 +458,7 @@ export default function Page() {
               </p>
               
               <motion.a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=minahilanwar18@gmail.com"
+                href="https://www.upwork.com/freelancers/~01a347bd1f4aee905a?viewMode=1"
                 whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(232, 121, 249, 0.6)" }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-block px-10 py-5 bg-gradient-to-r from-fuchsia-600 to-purple-600 rounded-full font-bold text-xl shadow-lg shadow-fuchsia-500/50"
