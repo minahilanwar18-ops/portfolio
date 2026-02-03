@@ -121,12 +121,18 @@ export default function Page() {
           </motion.div>
           <div className="flex gap-6 items-center">
             <motion.a
+              href="https://github.com/minahilanwar18-ops"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.1, color: "#e879f9" }}
               className="cursor-pointer transition-colors"
             >
               <Github size={24} />
             </motion.a>
             <motion.a
+              href="https://www.linkedin.com/in/manahil-anwar-235142144/"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.1, color: "#e879f9" }}
               className="cursor-pointer transition-colors"
             >
@@ -159,7 +165,7 @@ export default function Page() {
             transition={{ delay: 0.2 }}
             className="mb-6 px-4 py-2 bg-fuchsia-500/10 border border-fuchsia-500/20 rounded-full text-fuchsia-300 text-sm font-medium"
           >
-            ✨ Available for Freelance Work
+            Available for Freelance Work
           </motion.div>
 
           <motion.h1
@@ -197,13 +203,14 @@ export default function Page() {
             >
               View My Work <ArrowRight size={20} />
             </motion.button>
-            <motion.button
+            <motion.a
+              href="mailto:minahilanwar18@gmail.com"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 border-2 border-fuchsia-500/30 rounded-full font-bold text-lg hover:bg-fuchsia-500/10 transition-colors"
+              className="px-8 py-4 border-2 border-fuchsia-500/30 rounded-full font-bold text-lg hover:bg-fuchsia-500/10 transition-colors inline-flex items-center"
             >
               Get in Touch
-            </motion.button>
+            </motion.a>
           </motion.div>
 
           <motion.div
@@ -456,13 +463,14 @@ export default function Page() {
                 Have a project in mind? I'd love to hear about it. Let's work together to bring your vision to life.
               </p>
               
-              <motion.button
+              <motion.a
+                href="mailto:minahilanwar18@gmail.com"
                 whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(232, 121, 249, 0.6)" }}
                 whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 bg-gradient-to-r from-fuchsia-600 to-purple-600 rounded-full font-bold text-xl shadow-lg shadow-fuchsia-500/50"
+                className="inline-block px-10 py-5 bg-gradient-to-r from-fuchsia-600 to-purple-600 rounded-full font-bold text-xl shadow-lg shadow-fuchsia-500/50"
               >
                 Start a Conversation
-              </motion.button>
+              </motion.a>
             </motion.div>
           </div>
         </section>
