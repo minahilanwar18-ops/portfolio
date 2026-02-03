@@ -11,7 +11,7 @@ const projects = [
     description: "A complete UI/UX design for a makeup e-commerce mobile application including onboarding, cart, checkout and payment flow.",
     tags: ["UI/UX", "Mobile", "E-Commerce"],
     color: "from-pink-500 to-fuchsia-600",
-    image: "/images/mockup.jpg"
+    image: "/images/mockup2.jpg"
   },
   {
     id: 2,
