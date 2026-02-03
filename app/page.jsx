@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Palette, PenTool, Layers, Mail, Sparkles, ArrowRight, Download, Github, Linkedin, X, ZoomIn } from "lucide-react";
 
-// Your 9 images
+// Your 9 images - ALL PATHS FIXED
 const projects = [
   {
     id: 1,
@@ -35,7 +35,7 @@ const projects = [
     description: "Eye-catching social media designs for product launch across Instagram and Facebook.",
     tags: ["Social Media", "Marketing"],
     color: "from-orange-500 to-pink-600",
-    image: "/images/coming_soon.jpg" // REMEMBER: Rename the file to "coming-soon.jpg.jpeg"
+    image: "/images/coming_soon.jpg"
   },
   {
     id: 5,
@@ -43,7 +43,7 @@ const projects = [
     description: "Clean and modern website design for a marketing agency with strong brand identity and service showcase.",
     tags: ["Web Design", "Corporate", "Marketing"],
     color: "from-red-500 to-gray-600",
-    image: "images/website_design.png"
+    image: "/images/website_design.png"
   },
   {
     id: 6,
