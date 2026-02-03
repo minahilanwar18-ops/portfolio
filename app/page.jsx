@@ -254,11 +254,11 @@ export default function Page() {
                   alt="About Me"
                   className="w-full h-full object-cover"
                   onError={(e) => {
-                    e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect fill='%23111' width='400' height='400'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='%23666' font-size='16' dy='.3em'%3EYour Image Here%3C/text%3E%3C/svg%3E";
+                    e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='600'%3E%3Crect fill='%23111' width='400' height='400'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='%23666' font-size='16' dy='.3em'%3EYour Image Here%3C/text%3E%3C/svg%3E";
                   }}
                 />
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-600/20 to-purple-600/20 backdrop-blur-sm" />
+                <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-600/20 to-purple-600/20" />
               </div>
             </div>
           </motion.div>
