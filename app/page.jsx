@@ -1,32 +1,87 @@
 "use client";
-import { motion } from "framer-motion";
-import { Palette, PenTool, Layers, Mail, Sparkles, ArrowRight, Download, Github, Linkedin } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Palette, PenTool, Layers, Mail, Sparkles, ArrowRight, Download, Github, Linkedin, X, ZoomIn } from "lucide-react";
 
+// Your 9 images - Replace with your actual image filenames
 const projects = [
   {
-    title: "Makeup E-Commerce Mobile App",
-    description:
-      "A complete UI/UX design for a makeup e-commerce mobile application including onboarding, cart, checkout and payment flow.",
+    id: 1,
+    title: "UI/UX Design",
+    description: "A complete UI/UX design for a makeup e-commerce mobile application including onboarding, cart, checkout and payment flow.",
     tags: ["UI/UX", "Mobile", "E-Commerce"],
-    color: "from-pink-500 to-fuchsia-600"
+    color: "from-pink-500 to-fuchsia-600",
+    image: "/images/mockup.jpg.jpeg" // Replace with your image
   },
   {
-    title: "Brand Identity Suite",
-    description:
-      "Complete brand redesign including logo, color palette, typography, and marketing materials for a tech startup.",
-    tags: ["Branding", "Identity", "Print"],
-    color: "from-purple-500 to-pink-600"
+  id: 2,
+  title: "Logo Design Collection",
+  description: "Modern and minimalist logo designs that capture brand essence and identity.",
+  tags: ["Branding", "Logo Design"],
+  color: "from-purple-500 to-pink-600",
+  image: "/images/1vbn.jpg.jpeg"
   },
   {
-    title: "SaaS Dashboard Interface",
-    description:
-      "Modern, intuitive dashboard design for a B2B analytics platform with complex data visualization.",
-    tags: ["UI/UX", "Web", "Dashboard"],
-    color: "from-violet-500 to-purple-600"
+  id: 3,
+  title: "Print Marketing Materials",
+  description: "Creative flyers and brochures designed to capture attention and drive engagement.",
+  tags: ["Print", "Flyer", "Marketing"],
+  color: "from-violet-500 to-purple-600",
+  image: "/images/7c3b0d104776837.5f6a725d739ef.png"
   },
+  {
+      id: 4,
+      title: "Social Media Post",
+      description: "Eye-catching social media designs for product launch across Instagram and Facebook.",
+      tags: ["Social Media", "Marketing"],
+      color: "from-orange-500 to-pink-600",
+      image: "/images/coming soon.jpg.jpeg" // Replace with your image
+  },
+  {
+    id: 5,
+    title: "Digital Marketing Website",
+    description: "Clean and modern website design for a marketing agency with strong brand identity and service showcase.",
+    tags: ["Web Design", "Corporate", "Marketing"],
+    color: "from-red-500 to-gray-600",
+    image: "/images/website_design.png"
+   },
+  {
+    id: 6,
+    title: "Social Media Posts - Admissions",
+    description: "Engaging Facebook post design for educational admissions campaign with call-to-action.",
+    tags: ["Social Media", "Facebook", "Education"],
+    color: "from-blue-500 to-teal-600",
+    image: "/images/post1.jpeg"
+  },
+  {
+    id: 7,
+    title: "Countdown Post Design",
+    description: "Eye-catching 7 days countdown post with tech icons for course enrollment campaign.",
+    tags: ["Social Media", "Marketing", "Campaign"],
+    color: "from-yellow-500 to-orange-600",
+    image: "/images/post2.jpeg"
+  },
+  {
+    id: 8,
+    title: "Job Hiring Post",
+    description: "Bold recruitment post for graphic designer position with vibrant illustrations and clear messaging.",
+    tags: ["Social Media", "Hiring", "LinkedIn"],
+    color: "from-yellow-400 to-pink-500",
+    image: "/images/post3.jpeg"
+  },
+  {
+    id: 9,
+    title: "Service Promotion Post",
+    description: "Professional service advertisement for mobile and computer repair with strong visual hierarchy.",
+    tags: ["Social Media", "Promotion", "Service"],
+    color: "from-yellow-500 to-gray-600",
+    image: "/images/post4.jpeg"
+  }
 ];
 
 export default function Page() {
+  const [selectedProject, setSelectedProject] = useState(null);
+
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
       {/* Animated background gradient */}
@@ -234,63 +289,150 @@ export default function Page() {
           </div>
         </section>
 
-        {/* PROJECTS */}
-        <section className="max-w-6xl mx-auto px-6 py-32">
+        {/* FEATURED PROJECTS - IMAGE CARDS */}
+        <section className="max-w-7xl mx-auto px-6 py-32">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-16"
+            className="mb-16 text-center"
           >
             <div className="text-fuchsia-400 font-semibold mb-4 text-sm tracking-widest">PORTFOLIO</div>
             <h2 className="text-5xl font-bold mb-4">Featured Projects</h2>
             <p className="text-gray-400 text-lg">A selection of my recent work</p>
           </motion.div>
           
-          <div className="space-y-8">
+          {/* Image Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, i) => (
               <motion.div
-                key={i}
+                key={project.id}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                whileHover={{ scale: 1.02 }}
-                className="group relative bg-gradient-to-br from-white/5 to-white/0 p-8 rounded-3xl border border-white/10 backdrop-blur-sm overflow-hidden cursor-pointer"
+                whileHover={{ y: -10 }}
+                onClick={() => setSelectedProject(project)}
+                className="group cursor-pointer"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
-                
-                <div className="relative z-10">
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="flex gap-3">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 border border-white/10 shadow-2xl">
+                  {/* Project Image */}
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    onError={(e) => {
+                      e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23111' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='%23666' font-size='16' dy='.3em'%3EAdd Your Image%3C/text%3E%3C/svg%3E";
+                    }}
+                  />
+                  
+                  {/* Gradient Overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-0 group-hover:opacity-30 transition-opacity duration-500`} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+                  
+                  {/* Zoom Icon on Hover */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="p-4 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+                      <ZoomIn size={32} className="text-white" />
+                    </div>
+                  </div>
+
+                  {/* Project Info */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                    <div className="flex gap-2 mb-3 flex-wrap">
                       {project.tags.map((tag, idx) => (
                         <span
                           key={idx}
-                          className="px-3 py-1 bg-fuchsia-500/10 border border-fuchsia-500/20 rounded-full text-fuchsia-300 text-xs font-medium"
+                          className="px-3 py-1 bg-fuchsia-500/20 backdrop-blur-md border border-fuchsia-400/30 rounded-full text-fuchsia-200 text-xs font-medium"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
-                    <motion.div
-                      className="text-fuchsia-400 opacity-0 group-hover:opacity-100 transition-opacity"
-                      whileHover={{ x: 5 }}
-                    >
-                      <ArrowRight size={24} />
-                    </motion.div>
+                    <h3 className="text-xl font-bold text-white mb-1 group-hover:text-fuchsia-300 transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity line-clamp-2">
+                      {project.description}
+                    </p>
                   </div>
-                  
-                  <h3 className="text-3xl font-bold mb-3 group-hover:text-fuchsia-400 transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-400 text-lg leading-relaxed">
-                    {project.description}
-                  </p>
                 </div>
               </motion.div>
             ))}
           </div>
         </section>
+
+        {/* PROJECT MODAL */}
+        <AnimatePresence>
+          {selectedProject && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedProject(null)}
+              className="fixed inset-0 bg-black/95 backdrop-blur-2xl z-50 flex items-center justify-center p-4 md:p-8"
+            >
+              {/* Close Button */}
+              <motion.button
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-6 right-6 p-3 bg-white/10 backdrop-blur-md rounded-full hover:bg-white/20 transition-colors z-10 border border-white/20"
+              >
+                <X size={24} />
+              </motion.button>
+
+              {/* Modal Content */}
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                onClick={(e) => e.stopPropagation()}
+                className="relative max-w-6xl w-full max-h-[90vh] bg-gradient-to-br from-gray-900 to-black rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
+              >
+                {/* Large Image */}
+                <div className="relative">
+                  <img
+                    src={selectedProject.image}
+                    alt={selectedProject.title}
+                    className="w-full max-h-[60vh] object-contain bg-black"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-t ${selectedProject.color} opacity-10`} />
+                </div>
+
+                {/* Project Details */}
+                <div className="p-8 md:p-12">
+                  <div className="flex gap-2 mb-4 flex-wrap">
+                    {selectedProject.tags.map((tag, idx) => (
+                      <span
+                        key={idx}
+                        className="px-4 py-2 bg-fuchsia-500/10 border border-fuchsia-500/20 rounded-full text-fuchsia-300 text-sm font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <h2 className="text-5xl font-black mb-4 bg-gradient-to-r from-fuchsia-400 to-purple-400 bg-clip-text text-transparent">
+                    {selectedProject.title}
+                  </h2>
+                  <p className="text-gray-300 text-xl leading-relaxed mb-8">
+                    {selectedProject.description}
+                  </p>
+                  
+                  <div className="flex gap-4">
+                    <button className="px-8 py-4 bg-gradient-to-r from-fuchsia-600 to-purple-600 rounded-full font-bold hover:shadow-lg hover:shadow-fuchsia-500/50 transition-all">
+                      View Full Project
+                    </button>
+                    <button className="px-8 py-4 border-2 border-white/10 rounded-full font-bold hover:bg-white/5 transition-all">
+                      More Details
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* CONTACT */}
         <section className="py-32">
